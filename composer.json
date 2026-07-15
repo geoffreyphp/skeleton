@@ -1,0 +1,46 @@
+{
+  "$schema": "https://getcomposer.org/schema.json",
+  "name": "geoffreyphp/skeleton",
+  "type": "project",
+  "description": "The skeleton application for the Geoffrey agent framework.",
+  "keywords": ["framework"],
+  "license": "MIT",
+  "require": {
+    "php": "^8.4",
+    "geoffreyphp/framework": "dev-main"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Agents\\": "agents/",
+      "Tools\\": "tools/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+      "@php artisan package:discover --ansi"
+    ],
+    "post-update-cmd": [
+      "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+    ],
+    "pre-package-uninstall": [
+      "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "dont-discover": []
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  }
+}

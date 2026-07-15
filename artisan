@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+use Illuminate\Foundation\Application;
+use Symfony\Component\Console\Input\ArgvInput;
+
+define('LARAVEL_START', microtime(true));
+require __DIR__.'/vendor/autoload.php';
+
+/** @var Application $app */
+$app = \Geoffrey\Bootstrap::create(__DIR__);
+
+$status = $app->handleCommand(new ArgvInput);
+
+exit($status);
