@@ -7,7 +7,7 @@
   "license": "MIT",
   "require": {
     "php": "^8.4",
-    "geoffreyphp/framework": "dev-main"
+    "geoffreyphp/framework": "^0.1"
   },
   "minimum-stability": "dev",
   "autoload": {
